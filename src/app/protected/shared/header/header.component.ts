@@ -3,12 +3,11 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/services/auth.service';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css'],
-  encapsulation: ViewEncapsulation.None
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css'],
 })
-export class DashboardComponent implements OnInit {
+export class HeaderComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
