@@ -1,1 +1,36 @@
-<p>login works!</p>
+<form (ngSubmit)="login()" [formGroup]="miFormulario" class="p-3 mt-3">
+  <div class="form-field d-flex align-items-center">
+     <span class="far fa-user"></span>
+     <input
+        type="text"
+        formControlName="userName"
+        placeholder="Username"
+      >
+      <span *ngIf="isValidField('userName')" class="form-text text-danger">
+        {{ getErrorsDescription('userName') }}
+      </span>
+  </div>
+  <div class="form-field d-flex align-items-center">
+     <span class="fas fa-key"></span>
+     <input
+      type="password"
+      formControlName="password"
+      placeholder="Password">
+      <span *ngIf="isValidField('password')" class="form-text text-danger">
+        {{ getErrorsDescription('password') }}
+      </span>
+  </div>
+  <button type="submit" class="btn mt-3">Login</button>
+</form>
+
+<div class="text-center fs-6"> <a href="#">Forget password?</a>
+  or
+<a routerLink="/auth/register">Sign up</a> </div>
+
+<hr>
+
+<pre> {{ miFormulario.valid }} </pre>
+<br>
+<pre> {{ miFormulario.value | json }} </pre>
+<br>
+<pre> {{ miFormulario.controls['userName'].errors | json }} </pre>
