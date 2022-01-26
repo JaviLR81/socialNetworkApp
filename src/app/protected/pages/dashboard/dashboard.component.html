@@ -3,7 +3,15 @@
     <a href="#" class="foto">
       <img src="assets/img/persona2.jpg" alt="">
     </a>
-    <input type="text" placeholder="¿Qué estás pensando, Carlos?">
+
+    <!-- Usando viewchild de angular -->
+    <input
+      type="text"
+      placeholder="¿Qué estás pensando, Carlos?"
+      (keyup.enter)="publishState()"
+      #txtPublishState
+    >
+
   </div>
   <hr>
   <div class="botones d-flex">
@@ -30,7 +38,7 @@
 </div>
 
 <div class="publicaciones">
-  <div class="publicacion">
+  <div class="publicacion" *ngFor="let similarState of similarStates">
     <div class="header">
       <a class="foto" href="#">
         <img src="assets/img/persona3.jpg" alt="">
@@ -41,7 +49,7 @@
       </div>
     </div>
     <div class="body">
-      <p>Lorem ipsum dolor sit amet.</p>
+      <p> {{ similarState.title }} </p>
       <img src="assets/img/paisaje1.jpg" alt="">
     </div>
     <div class="comentarios d-flex justify-content-between">
@@ -87,7 +95,7 @@
       <div class="me-gusta d-flex justify-content-start align-items-center">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
           <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-        </svg>
+          </svg>
         <span>60</span>
       </div>
       <a href="#">7 comentarios</a>
