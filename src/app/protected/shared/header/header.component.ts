@@ -53,4 +53,9 @@ export class HeaderComponent implements OnInit {
       });
   }
 
+  setSearchToService(){
+    const value = this.txtSearch.nativeElement.value;
+    this.dashboardService.lastSearchFromHeader = value;
+  }
+
 }

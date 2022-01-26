@@ -12,6 +12,8 @@ export class DashboardService {
   private base_JSON_PLACE_HOLDER_URL = 'https://jsonplaceholder.typicode.com/albums';
   private base_JSON_PLACE_HOLDER_ERROR_URL = 'https://jsonplaceholder.typicode.com/albums/10000';
 
+  lastSearchFromHeader = 'Hola mundo';
+
   constructor(private http: HttpClient) { }
 
   getSimilarStates(): Observable<SimilarState[]>{

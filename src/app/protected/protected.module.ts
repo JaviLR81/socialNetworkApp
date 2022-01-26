@@ -8,6 +8,7 @@ import { MessagesComponent } from './pages/messages/messages.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SidebarLeftComponent } from './shared/sidebar-left/sidebar-left.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { SidebarLeftComponent } from './shared/sidebar-left/sidebar-left.compone
   ],
   imports: [
     CommonModule,
-    ProtectedRoutingModule
+    ProtectedRoutingModule,
+    FormsModule
   ]
 })
 export class ProtectedModule { }
