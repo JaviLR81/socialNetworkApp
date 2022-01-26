@@ -1,4 +1,4 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
@@ -16,18 +16,41 @@ export class DashboardService {
 
   constructor(private http: HttpClient) { }
 
+  // Another form to work with httpParams
+  get httpParamsExample () {
+    // const params = new Httpparams
+    return new HttpParams().set( 'fields', 'name,capital,alpha2Code,flag,population' );
+  }
+
   getSimilarStates(): Observable<SimilarState[]>{
 
     const url = this.base_JSON_PLACE_HOLDER_URL;
 
-    return this.http.get<SimilarState[]>(url)
+    // Fake use of http params
+    const params = new HttpParams()
+      .set('limit','10');
+
+    return this.http.get<SimilarState[]>(url,{params})
         .pipe(
           map( resp => {
             return resp.splice(0,10);
-          }),
-          // catchError( err => {
-          //   return of(err);
-          // })
+          })
+        );
+  }
+
+  saveState(similarState: SimilarState): Observable<SimilarState>{
+
+    // Fake use of http headers
+    const headers = new HttpHeaders()
+      .set('x-token', 'Some Random header' );
+
+    const url = this.base_JSON_PLACE_HOLDER_URL;
+
+    return this.http.post<SimilarState>(url,similarState,{ headers })
+        .pipe(
+          map( resp => {
+            return resp;
+          })
         );
   }
 
