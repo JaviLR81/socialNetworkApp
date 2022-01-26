@@ -7,6 +7,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { MessagesComponent } from './pages/messages/messages.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
+import { SidebarLeftComponent } from './shared/sidebar-left/sidebar-left.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { HomeComponent } from './pages/home/home.component';
     ProfileComponent,
     MessagesComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    SidebarLeftComponent
   ],
   imports: [
     CommonModule,

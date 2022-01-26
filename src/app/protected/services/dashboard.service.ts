@@ -17,7 +17,6 @@ export class DashboardService {
   getSimilarStates(): Observable<SimilarState[]>{
 
     const url = this.base_JSON_PLACE_HOLDER_URL;
-    // const url = this.base_JSON_PLACE_HOLDER_ERROR_URL;
 
     return this.http.get<SimilarState[]>(url)
         .pipe(

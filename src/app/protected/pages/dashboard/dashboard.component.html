@@ -4,12 +4,9 @@
       <img src="assets/img/persona2.jpg" alt="">
     </a>
 
-    <!-- Usando viewchild de angular -->
     <input
       type="text"
       placeholder="¿Qué estás pensando, Carlos?"
-      (keyup.enter)="publishState()"
-      #txtPublishState
     >
 
   </div>
@@ -38,7 +35,8 @@
 </div>
 
 <div class="publicaciones">
-  <div class="publicacion" *ngFor="let similarState of similarStates">
+  <div class="publicacion" >
+    <!-- *ngFor="let similarState of similarStates" -->
     <div class="header">
       <a class="foto" href="#">
         <img src="assets/img/persona3.jpg" alt="">
@@ -49,7 +47,6 @@
       </div>
     </div>
     <div class="body">
-      <p> {{ similarState.title }} </p>
       <img src="assets/img/paisaje1.jpg" alt="">
     </div>
     <div class="comentarios d-flex justify-content-between">

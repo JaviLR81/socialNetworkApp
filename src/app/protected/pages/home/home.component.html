@@ -1,8 +1,9 @@
 
-<app-header></app-header>
+<app-header (onEnter)="search($event)" (onSearch)="lastlySearch($event)" ></app-header>
 
 <div class="container-fluid">
   <div class="contenido-principal row justify-content-center justify-content-md-between">
+
     <aside class="enlaces-rapidos col-3 col-xl-2">
       <nav>
         <a href="#" class="perfil">
@@ -72,6 +73,10 @@
       </footer>
     </aside>
 
+    <div class="col-3 col-xl-2">
+      <app-sidebar-left [lastSearch]="lastSearch"></app-sidebar-left>
+    </div>
+
     <main class="col-12 col-sm-10 col-md-6 col-xxl-4">
       <router-outlet></router-outlet>
     </main>
@@ -108,7 +113,20 @@
           </a>
         </nav>
       </div>
+
+      <div class="seccion">
+        <h3 class="titulo">Test de Output Directo</h3>
+        <nav>
+          <a href="#" class="perfil" *ngFor="let item of similarStates">
+            <img src="assets/img/persona1.jpg" alt=""> Alejandro Doe
+          </a>
+        </nav>
+      </div>
+
     </aside>
+
+
+
   </div>
 </div>
 
