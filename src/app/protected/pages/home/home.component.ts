@@ -10,8 +10,9 @@ import { SimilarState } from '../../interfaces/similar-state.interface';
 export class HomeComponent implements OnInit {
 
   similarStates!: SimilarState[];
-
   lastSearch: string = '';
+
+  profileName: string = 'Javier Lozano';
 
   constructor() { }
 

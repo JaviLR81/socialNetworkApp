@@ -7,7 +7,7 @@
     <aside class="enlaces-rapidos col-3 col-xl-2">
       <nav>
         <a href="#" class="perfil">
-          <img src="assets/img/persona2.jpg" alt="">Carlos Arturo
+          <img src="assets/img/persona2.jpg" alt=""> {{ profileName | uppercase | agregarArroba}}
         </a>
         <a href="#">
           <div class="icono">
@@ -72,10 +72,6 @@
         </nav>
       </footer>
     </aside>
-
-    <div class="col-3 col-xl-2">
-      <app-sidebar-left [lastSearch]="lastSearch"></app-sidebar-left>
-    </div>
 
     <main class="col-12 col-sm-10 col-md-6 col-xxl-4">
       <router-outlet></router-outlet>

@@ -7,8 +7,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { MessagesComponent } from './pages/messages/messages.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
-import { SidebarLeftComponent } from './shared/sidebar-left/sidebar-left.component';
 import { FormsModule } from '@angular/forms';
+import { AgregarArrobaPipe } from './pipes/agregar-arroba.pipe';
 
 
 @NgModule({
@@ -18,7 +18,7 @@ import { FormsModule } from '@angular/forms';
     MessagesComponent,
     HeaderComponent,
     HomeComponent,
-    SidebarLeftComponent
+    AgregarArrobaPipe,
   ],
   imports: [
     CommonModule,
