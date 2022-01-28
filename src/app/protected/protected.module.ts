@@ -9,6 +9,8 @@ import { HeaderComponent } from './shared/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AgregarArrobaPipe } from './pipes/agregar-arroba.pipe';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { InterceptorService } from './interceptors/interceptor.service';
 
 
 @NgModule({
@@ -25,6 +27,7 @@ import { AgregarArrobaPipe } from './pipes/agregar-arroba.pipe';
     ProtectedRoutingModule,
     FormsModule,
     ReactiveFormsModule
-  ]
+  ],
+  providers: []
 })
 export class ProtectedModule { }
