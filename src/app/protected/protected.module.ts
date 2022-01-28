@@ -7,7 +7,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { MessagesComponent } from './pages/messages/messages.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AgregarArrobaPipe } from './pipes/agregar-arroba.pipe';
 
 
@@ -23,7 +23,8 @@ import { AgregarArrobaPipe } from './pipes/agregar-arroba.pipe';
   imports: [
     CommonModule,
     ProtectedRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ProtectedModule { }

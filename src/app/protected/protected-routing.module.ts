@@ -12,6 +12,7 @@ const routes: Routes = [
     children : [
       { path:'dashboard' , component:DashboardComponent },
       { path:'messages'  , component: MessagesComponent },
+      { path:'messages/:userId'  , component: MessagesComponent },
       { path:'profile'   , component: ProfileComponent },
       { path:'**'        , redirectTo: 'dashboard' },
     ]

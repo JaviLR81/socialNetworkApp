@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { AuthService } from 'src/app/auth/services/auth.service';
 import { SimilarState } from '../../interfaces/similar-state.interface';
 
 @Component({
@@ -14,7 +15,13 @@ export class HomeComponent implements OnInit {
 
   profileName: string = 'Javier Lozano';
 
-  constructor() { }
+  constructor(
+    private authService: AuthService
+  ){ }
+
+  get user(){
+    return this.authService.user;
+  }
 
   ngOnInit(): void {
   }

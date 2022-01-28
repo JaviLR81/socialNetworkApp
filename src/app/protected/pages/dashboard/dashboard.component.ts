@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/auth/services/auth.service';
 import { SimilarState } from '../../interfaces/similar-state.interface';
 import { DashboardService } from '../../services/dashboard.service';
 
@@ -9,7 +10,14 @@ import { DashboardService } from '../../services/dashboard.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private dashboardService: DashboardService) { }
+  constructor(
+    private dashboardService: DashboardService,
+    private authService: AuthService
+  ){ }
+
+  get user(){
+    return this.authService.user;
+  }
 
   fieldToSearch: string = '';
   newState!: SimilarState;

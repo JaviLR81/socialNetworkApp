@@ -7,7 +7,7 @@
     <aside class="enlaces-rapidos col-3 col-xl-2">
       <nav>
         <a href="#" class="perfil">
-          <img src="assets/img/persona2.jpg" alt=""> {{ profileName | uppercase | agregarArroba}}
+          <img src="assets/img/persona2.jpg" alt=""> {{ user.name | uppercase | agregarArroba}} {{user.age}} {{ user.email  }}
         </a>
         <a href="#">
           <div class="icono">

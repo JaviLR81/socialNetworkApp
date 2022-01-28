@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-messages',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessagesComponent implements OnInit {
 
-  constructor() { }
+
+  parameter: string = '';
+
+  constructor(private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
+
+    this.activatedRoute.params
+      .subscribe( ({userId}) =>{
+        this.parameter = userId;
+      });
   }
 
 }

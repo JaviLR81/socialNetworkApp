@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of, pipe } from 'rxjs';
+import { User } from '../interfaces/user.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +8,12 @@ import { Observable, of, pipe } from 'rxjs';
 export class AuthService {
 
   constructor() {
+  }
+
+  private _user!: User;
+
+  get user(){
+    return {...this._user};
   }
 
 
@@ -29,6 +36,11 @@ export class AuthService {
 
   verificaToken(): Observable<boolean>{
     if(localStorage.getItem('token')){
+      this._user = {
+        name: 'Javier',
+        age: 25,
+        email: 'javierlzrd@gmail.com'
+      };
       return of(true);
     }
 
